@@ -19,7 +19,7 @@ public class MoneyUI : MonoBehaviour
     }
     private void Update()
     {
-        moneyText.text = "￥: " + money;
+        moneyText.text = "£: " + money;
         ppText.text = "PP: " + PP;
         emissionsText.text = "World Emissons: " + emissions + "%";
 
@@ -29,6 +29,10 @@ public class MoneyUI : MonoBehaviour
             PP += 10;
             money += 50000;
 
+        }
+        if(turbine)
+        {
+            RemoveMoney();
         }
 
 
