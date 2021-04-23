@@ -12,15 +12,21 @@ public class MoneyUI : MonoBehaviour
     private int emissions;
     public Text emissionsText;
     public bool turbine = false;
+    private int newEmissions;
 
     public void Start()
     {
         money = 50000;
         PP = 10;
         emissions = 95;
+
+        moneyText.text = "£: " + money;
+        ppText.text = "PP: " + PP;
+        emissionsText.text = "World Emissons: " + emissions + "%";
     }
     private void Update()
     {
+        //emissions = newEmissions;
 
         if (Input.GetKeyUp("up"))
         {
@@ -57,6 +63,8 @@ public class MoneyUI : MonoBehaviour
             {
                 emissions -= 5;
                 emissionsText.text = "World Emissons: " + emissions + "%";
+             //   newEmissions = emissions;
+
             }
         }
 
@@ -66,6 +74,7 @@ public class MoneyUI : MonoBehaviour
             {
                 emissions += 5;
                 emissionsText.text = "World Emissons: " + emissions + "%";
+            //    newEmissions = emissions;
             }
         }
 
@@ -77,8 +86,8 @@ public class MoneyUI : MonoBehaviour
         money -= 10000;
         moneyText.text = "£: " + money;
 
-        emissions -= 5;
-        emissionsText.text = "World Emissons: " + emissions + "%";
+     //   emissions -= 5;
+     //   emissionsText.text = "World Emissons: " + emissions + "%";
     }
 
     public void TurbineTrue()
