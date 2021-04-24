@@ -22,10 +22,10 @@ public class Clock : MonoBehaviour
     int month;
     int day;
 
-    int maxHour = 24;
-    int maxMinute = 60;
-    int maxDay = 30;
-    int maxMonth = 12;
+    int maxHour = 1;
+    int maxMinute = 30;
+    int maxDay = 31;
+    int maxMonth = 13;
 
     float timer = 0;
 
