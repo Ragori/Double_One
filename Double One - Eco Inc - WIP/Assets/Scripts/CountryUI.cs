@@ -13,7 +13,7 @@ public class CountryUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countryEmissions = 100;
+        countryEmissions = 1000;
         countryEmissionsText.text = "UK Emissions: " + countryEmissions;
     }
 
@@ -45,9 +45,10 @@ public class CountryUI : MonoBehaviour
 
     public void turbineCheck()
     {
-
-        countryEmissions -= 50;
-        countryEmissionsText.text = "UK Emissions: " + countryEmissions;
-
+        if (countryEmissions > 0)
+        {
+            countryEmissions -= 50;
+            countryEmissionsText.text = "UK Emissions: " + countryEmissions;
+        }
     }
 }
