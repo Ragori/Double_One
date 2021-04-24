@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class MoneyUI : MonoBehaviour
 {
-    public int money;
+    static public int money;
     public Text moneyText;
     private int PP;
     public Text ppText;
     private int emissions;
     public Text emissionsText;
     public bool turbine = false;
-    private int newEmissions;
 
     public void Start()
     {
@@ -26,14 +25,13 @@ public class MoneyUI : MonoBehaviour
     }
     private void Update()
     {
-        //emissions = newEmissions;
 
         if (Input.GetKeyUp("up"))
         {
             PP += 10;
             ppText.text = "PP: " + PP;
 
-            money += 50000;
+            money += 5000;
             moneyText.text = "£: " + money;
 
 
@@ -49,7 +47,7 @@ public class MoneyUI : MonoBehaviour
 
             if (money > 0)
             {
-                money -= 50000;
+                money -= 5000;
                 moneyText.text = "£: " + money;
             }
 
@@ -85,7 +83,7 @@ public class MoneyUI : MonoBehaviour
 
         if (money > 0)
         {
-            money -= 50000;
+            money -= 10000;
             moneyText.text = "£: " + money;
         }
 
