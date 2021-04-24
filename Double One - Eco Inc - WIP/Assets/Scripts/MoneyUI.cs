@@ -82,16 +82,20 @@ public class MoneyUI : MonoBehaviour
 
     public void RemoveMoney()
     {
-        
-        money -= 10000;
-        moneyText.text = "£: " + money;
 
-     //   emissions -= 5;
-     //   emissionsText.text = "World Emissons: " + emissions + "%";
+        if (money > 0)
+        {
+            money -= 50000;
+            moneyText.text = "£: " + money;
+        }
+
+        //   emissions -= 5;
+        //   emissionsText.text = "World Emissons: " + emissions + "%";
     }
 
     public void TurbineTrue()
     {
         turbine = true;
+        
     }
 }
