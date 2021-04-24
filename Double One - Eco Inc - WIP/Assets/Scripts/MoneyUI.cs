@@ -9,7 +9,7 @@ public class MoneyUI : MonoBehaviour
     public Text moneyText;
     private int PP;
     public Text ppText;
-    private int emissions;
+    static private int emissions;
     public Text emissionsText;
     public bool turbine = false;
 
