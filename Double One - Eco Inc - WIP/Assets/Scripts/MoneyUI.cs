@@ -12,6 +12,8 @@ public class MoneyUI : MonoBehaviour
     static private int emissions;
     public Text emissionsText;
     public bool turbine = false;
+    public bool solar = false;
+    public bool hydro = false;
 
     public void Start()
     {
@@ -25,6 +27,11 @@ public class MoneyUI : MonoBehaviour
     }
     private void Update()
     {
+
+        if (money <= 0)
+        {
+            money = 0;
+        }
 
         if (Input.GetKeyUp("up"))
         {
@@ -80,12 +87,36 @@ public class MoneyUI : MonoBehaviour
 
     public void RemoveMoney()
     {
-
-        if (money > 0)
+        if (turbine == true)
         {
-            money -= 10000;
-            moneyText.text = "£: " + money;
+            if (money > 0 && money - 10000 >= 0)
+            {
+                money -= 10000;
+                moneyText.text = "£: " + money;
+                AllFalse();
+            }
         }
+
+        if (solar == true)
+        {
+            if (money > 0 && money - 15000 >= 0)
+            {
+                money -= 15000;
+                moneyText.text = "£: " + money;
+                AllFalse();
+            }
+        }
+
+        if (hydro == true)
+        {
+            if (money > 0 && money - 20000 >= 0)
+            {
+                money -= 20000;
+                moneyText.text = "£: " + money;
+                AllFalse();
+            }
+        }
+
 
         //   emissions -= 5;
         //   emissionsText.text = "World Emissons: " + emissions + "%";
@@ -95,5 +126,24 @@ public class MoneyUI : MonoBehaviour
     {
         turbine = true;
         
+    }
+
+    public void SolarTrue()
+    {
+        solar = true;
+
+    }
+
+    public void HydroTrue()
+    {
+        hydro = true;
+
+    }
+
+    public void AllFalse()
+    {
+        turbine = false;
+        solar = false;
+        hydro = false;
     }
 }
