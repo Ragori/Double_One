@@ -117,26 +117,26 @@ public class MoneyUI : MonoBehaviour
             }
         }
 
-
-        //   emissions -= 5;
-        //   emissionsText.text = "World Emissons: " + emissions + "%";
     }
 
     public void TurbineTrue()
     {
         turbine = true;
+        RemoveMoney();
         
     }
 
     public void SolarTrue()
     {
         solar = true;
+        RemoveMoney();
 
     }
 
     public void HydroTrue()
     {
         hydro = true;
+        RemoveMoney();
 
     }
 
